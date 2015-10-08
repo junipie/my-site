@@ -22,6 +22,22 @@ footer {
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
+.navbar {
+  background: none;
+  border-bottom-width: 0px;
+}
+.main-center {
+  margin-bottom: 75px;
+}
+.content-box {
+  width: 90%;
+  margin: 30px auto 30px auto;
+}
+#content {
+  
+}
+
+
 ul.nav li a{
 	color:149 !important;
 }
