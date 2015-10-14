@@ -1,19 +1,23 @@
 /*Framework*/
 .navbar {
-  background: #666;
+  background: #716d6a;
   border-bottom: 1px solid transparent;
   top: 0;
   left: 0;
   width: 100%;
   font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+#headlinks {
+  color: #809999 !important;
+}
 .jumbotron {
   height: auto;
-  color: #efefef;
-  background-color: #666;
+  color: #161b1b;
+  background-color: #716d6a;
 }
 body {
   margin-bottom: 100px;
+  background-color: #e1e1e1;
 }
 html {
   position: relative;
@@ -28,8 +32,8 @@ footer {
   bottom: 0;
   width: 100%;
   height: 100px;
-  color: #efefef;
-  background-color: #666;
+  color: #161b1b;
+  background-color: #716d6a;
 }
 #footer-content{
   padding-top: 10px;
@@ -44,6 +48,7 @@ footer {
 .content-box {
   width: 90%;
   margin: 30px auto 30px auto;
+  background-color: #cfc5c2;
 }
 
 
@@ -67,26 +72,14 @@ footer {
   width: 190px;
 }
 
-#headlinks {
-  color: #626 !important;
-}
 
-
-/*ul.nav li a, ul.nav li a:visited {
-    color: #332 !important;
-}
-
-ul.nav li a:hover, ul.nav li a:active {
-    color: #332 !important;
-}
-
-ul.nav li.active a {
-    color: #332 !important;
-}*/
 
 
 .post .entry-meta{
   font-weight: bold;
+}
+.date{
+  color: #161b1b;
 }
 .post .main{
   border-bottom:1px dashed;
@@ -97,7 +90,7 @@ ul.nav li.active a {
   width: 580px;
 }
 .entry-title{
-  color: #666;
+  color: #809999;
   font-family: "Oswald", Helvetica;
   font-size: 25px;
   line-height: 38px;
