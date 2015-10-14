@@ -67,9 +67,22 @@ footer {
   width: 190px;
 }
 
+#headlinks {
+  color: #626 !important;
+}
 
 
+/*ul.nav li a, ul.nav li a:visited {
+    color: #332 !important;
+}
 
+ul.nav li a:hover, ul.nav li a:active {
+    color: #332 !important;
+}
+
+ul.nav li.active a {
+    color: #332 !important;
+}*/
 
 
 .post .entry-meta{
