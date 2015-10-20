@@ -1,5 +1,3 @@
-//This should make a request to your animals api, and append each item
-//to the HTML id list
 (function(){
 $.getJSON( "http://localhost:3000/api/blogs", function(data) {
   var items = [];
