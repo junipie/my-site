@@ -78,10 +78,6 @@ footer {
   text-transform: uppercase;
   width: 190px;
 }
-
-
-
-
 .post .entry-meta{
   font-weight: bold;
 }
@@ -107,7 +103,7 @@ footer {
 }
 
 /*May not need*/
-.post{
+.blog-area{
   height: auto;
   clear: both;
   position: relative;
