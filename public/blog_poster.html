@@ -1,65 +1,54 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Juniper Emnett - Blog Poster Tool</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-		  <link rel="stylesheet" type="text/css" href="css/style.css">
-    </head>
+<head>
+  <meta charset="utf-8">
+  <title>Juniper Emnett - Blog Poster Tool</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
 
-    <body>
+<body>
 
-    <nav class="navbar navbar-fixed-top navbar-nav">
-        <div class="container-fluid">
-        <a class="navbar-brand" href="https://twitter.com/lejuniper" id="headlinks">@lejuniper</a>
-        <ul class="nav navbar-nav navbar-right">
-              <li><a href="index.html" id="headlinks">Home</a></li>
-              <li><a href="about.html" id="headlinks">About</a></li>
-              <li><a href="blog.html" id="headlinks">Blog</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav class="navbar navbar-fixed-top navbar-nav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="https://twitter.com/lejuniper" id="headlinks">@lejuniper</a>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html" id="headlinks">Home</a></li>
+        <li><a href="about.html" id="headlinks">About</a></li>
+        <li><a href="blog.html" id="headlinks">Blog</a></li>
+      </ul>
+    </div>
+  </nav>
 
   <div class="jumbotron container-fluid">
-      <h1>Juniper Emnett</h1>      
+    <h1>Juniper Emnett</h1>      
   </div>
 
-<div class="container-fluid">
-  <form action="/api/blogs" method="POST" role="form">
-    <legend>Blog Entry</legend>
+  <div class="container-fluid" id="poster-area">
   
-    <div class="form-group">
-      <label for="">Title</label>
-      <input type="text" class="form-control" name="title" placeholder="Title">
-      <label for="">Date</label>
-      <input type="text" class="form-control" name="date" placeholder="Date">
-      <label for="comment">Content:</label>
-      <textarea class="form-control" rows="5" name="content" placeholder="Content"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
-</div>
+  </div>
 
-<footer>
+  <footer>
     <div class="container-fluid" style="text-align: center">
       <div class="row">        
         <ul class="list-unstyled" id="footer-content">
          <li><i class="glyphicon glyphicon-globe"></i>  Bozeman, MT</li>
          <li><i class="glyphicon glyphicon-phone"></i>  (406) 599-9229</li>
          <li><i class="glyphicon glyphicon-envelope"></i>  junipie@gmail.com</li>
-        </ul>
-      </div>
-    </div>
-  </footer>
+       </ul>
+     </div>
+   </div>
+ </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+    
+ <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+ <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+ <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
 </body>
-    <script src="https://code.jquery.com/jquery-2.1.4.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script src=""></script>
-  <script src=""></script>
+<script src="https://code.jquery.com/jquery-2.1.4.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script type="text/jsx" src="./javascript/blogposter.js"></script>
 </html>

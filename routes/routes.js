@@ -22,9 +22,9 @@ router.route('/blogs')
     	}, function(err, blog){
       		if(err){
         	res.send("Do you require assistance?");
-      		} else{
-        		res.redirect("/blog.html");
-      		}
+      		}else{
+            res.send(blog);
+          }
     	});
   	})
 
