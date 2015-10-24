@@ -14,6 +14,11 @@ module.exports = function(app, passport) {
         });
     });
 
+    app.get('/blog_poster', isLoggedIn, function(req, res) {
+        res.render('blog_poster.ejs', {
+            user : req.user
+        });
+    });
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
         req.logout();
@@ -49,7 +54,7 @@ module.exports = function(app, passport) {
     });
     app.post('/connect/local', passport.authenticate('local-signup', {
         successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/connect/local', // redirect back to the signup page if there is an error
+        failureRedirect : '/connect/local', // redirect back to signup if there is an error
         failureFlash : true // allow flash messages
     }));
 
