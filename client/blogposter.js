@@ -1,5 +1,6 @@
-var Poster = React.createClass({
+var React = require("react");
 
+var Poster = React.createClass({
   handleSubmit: function(e){
     e.preventDefault();
     var title = React.findDOMNode(this.refs.title).value.trim();
@@ -29,7 +30,8 @@ var Poster = React.createClass({
      });
   
    },
-    render: function() {
+
+  render: function() {
         return(
               <div className="container-fluid">
                 <form role="form">
@@ -55,5 +57,4 @@ var Poster = React.createClass({
      
 });
 
-React.render(<Poster url="/api/blogs"/>, document.getElementById("poster-area"));
-
+module.exports = Poster;
