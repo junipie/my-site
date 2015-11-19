@@ -18,6 +18,8 @@ var mongoose = require('mongoose');
 var app = express();
 var uriUtil = require('mongodb-uri');
 
+var githubRoutes = require('./routes/gitRoutes');
+
 var options = {
   server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
   replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
@@ -44,8 +46,6 @@ app.use(passport.session());
 app.use(flash());
 
 var port = process.env.PORT || 3000;
-
-
 
 if (process.env.NODE_ENV === 'production') {
   console.log('Running in production mode');
@@ -78,8 +78,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-
-
 var blogRoutes = require('./routes/routes');
 
 app.use(express.static('public'));
@@ -87,6 +85,7 @@ app.use(express.static('public'));
 require('./routes/userroutes.js')(app, passport);
 
 app.use('/api', blogRoutes);
+app.use('/api/github', githubRoutes);
 
 app.get('/', function(req, res){
     res.readFile('index.html')

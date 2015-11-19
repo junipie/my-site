@@ -6,7 +6,10 @@ module.exports = {
   entry: {
     blog: ['./client/app'
     ],
-    blogPoster: ['./client/posting']
+    blogPoster: ['./client/posting'
+    ],
+    github: ['./client/github'
+    ]
   },
   output: {
     path: path.join(__dirname, 'static'),

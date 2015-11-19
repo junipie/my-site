@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
     });
 
     app.get('/blog_poster', isLoggedIn, function(req, res) {
-        res.render('blog_poster.ejs', {
+        res.render('./views/blog_poster.ejs', {
             user : req.user
         });
     });
@@ -33,8 +33,8 @@ module.exports = function(app, passport) {
     });
 
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : '/profile', // redirect to the secure profile section
-        failureRedirect : '/login', // redirect back to the signup page if there is an error
+        successRedirect : './views/blog_poster.ejs',
+        failureRedirect : '/login', // redirect to the signup page if error
         failureFlash : true // allow flash messages
     }));
 

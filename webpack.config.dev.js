@@ -6,7 +6,10 @@ module.exports = {
   entry: {
     blog: ['webpack-hot-middleware/client','./client/app'
     ],
-    blogPoster: ['webpack-hot-middleware/client', './client/posting']
+    blogPoster: ['webpack-hot-middleware/client', './client/posting'
+    ],
+    github: ['webpack-hot-middleware/client', './client/github'
+    ]
   },
   output: {
     path: path.join(__dirname, 'static'),
