@@ -30,12 +30,13 @@ router.route('/blogs')
 
 // GET All BLOGS
   .get(function(req, res) {
-    mongoose.model('Blog').find({}, function(err, blog){
+    mongoose.model('Blog').find({})
+    .populate('comments')
+    .exec(function(err, blogs){
       if(err){
-        res.send("Do you require assistance?");
-      } else {
-        console.log("Get is working")
-        res.json(blog);
+        return console.log(err);
+      } else{
+        res.json(blogs);
       }
     });
   })
@@ -77,5 +78,36 @@ router.route('/blogs/:blog_id')
             res.json({ message: 'Successfully deleted' });
         });
     });
+
+
+router.route('/blogs/:id/comment')
+  .post(function(req, res){
+    mongoose.model('Comment').create({
+      body: req.body.body,
+      user: req.user
+    }, function(err, comment){
+      if(err)
+        res.send(err)
+      mongoose.model('Blog').findById({
+        _id: req.params.id
+      }, function(err, blog){
+        if(err)
+          res.send(err)
+        blog.comments.push(comment._id);
+        blog.save();
+        res.send(comment);
+      })
+    })
+  });
+
+router.route('/blogs/:id/comments')
+  .get(function(req, res){
+    mongoose.model('Blog').findById({_id: req.params.id})
+    .populate('comments').exec(function(err, comments){
+      if(err)
+        res.send(err)
+      res.send(comments)
+    })
+  })
 
 module.exports = router;

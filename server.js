@@ -13,6 +13,7 @@ var session = require("express-session");
 
 var db = require('./model/db');
 var Blog = require('./model/blog');
+var comment = require('./model/comment');
 var app = express();
 var mongoose = require('mongoose');
 var app = express();
