@@ -4,12 +4,9 @@ var webpack = require('webpack');
 module.exports = {
   devtool: 'source-map',
   entry: {
-    blog: ['./client/app'
-    ],
-    blogPoster: ['./client/posting'
-    ],
-    github: ['./client/github'
-    ]
+    blog: './client/app',
+    blogPoster: './client/posting',
+    github: './client/github'
   },
   output: {
     path: path.join(__dirname, 'static'),
