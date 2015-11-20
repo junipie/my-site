@@ -35,11 +35,12 @@
     "morgan": "^1.6.1",
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
+    "react": "^0.14.2",
     "webpack": "^1.9.6",
     "twit": "^2.1.0"
   },
   "engines": {
-    "node": "4.2.x"
+    "node": "5.0.0"
   },
   "devDependencies": {
     "babel-core": "^5.4.7",
