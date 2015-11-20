@@ -5,8 +5,6 @@ var BlogList = React.createClass({
 
 	render: function() {
 		var oneBlog = this.props.data.map(function(blog){
-
-
 			var commentList = blog.comments.map(function(c){
 				var originDate = c.date;
 				var commentDate = originDate.substring(0, 10);
