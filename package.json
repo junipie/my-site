@@ -26,6 +26,7 @@
     "express-session": "^1.11.3",
     "kerberos": "0.0.17",
     "lodash": "^3.10.1",
+    "merge-descriptors": "1.0.0",
     "method-override": "^2.3.5",
     "mongo": "^0.1.0",
     "mongodb": "^2.0.46",
