@@ -63,6 +63,23 @@ body {
   border-radius: 0;
  }
 
+ .ghost-button-xs {
+  color: #87a94b;
+  background: #fff;
+  border: 1px solid #87a94b;
+  font-size: 11px;
+  padding: 5px 10px;
+  font-weight: normal;
+  margin: 5px 0;
+  margin-right: 10px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Raleway', sans-serif;
+  min-width: 70px;
+  vertical-align: middle;
+  border-radius: 0;
+ }
+
 .ghost-button:hover, .ghost-button:active {
   color:#fff;
   background:#87a94b;
@@ -82,12 +99,12 @@ body {
 
 /*FOOTER*/
 .icons {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin-right: 15px;
+  margin-left: 15px;
 }
 
 .social-icons {
-  margin-top: 8px;
+  margin-top: 5px;
 }
 
 .bottom-nav{
@@ -114,7 +131,7 @@ body {
 }
 
 .about-xs {
-  height: 750px;
+  max-height: 800px;
   background-image: url("../img/honeycomb.jpg");
   background-size: cover;
 }
@@ -154,13 +171,17 @@ body {
 }
 
 .info-well-xs {
-  height: 350px;
-  width: 80%;
+  max-height: 425px;
+  width: 90%;
   background-color: #87a94b;
   margin-bottom: 25px;
   border: 5px solid #fff;
   border-radius: 0;
-  margin-left: 10%;
+  margin-left: 5%;
+}
+
+.info-well-xs p{
+  font-size: 12px;
 }
 
 .profile-img-lg {
@@ -200,6 +221,7 @@ body {
   background-image: url("../img/hand.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 50px;
 }
 
 .skills-lists-md {
@@ -207,6 +229,7 @@ body {
   background-image: url("../img/hand.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 50px;
 }
 
 .skills-lists-sm {
@@ -214,13 +237,22 @@ body {
   background-image: url("../img/hand.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+  margin-bottom: 50px;
+}
+
+.skills-lists-xs {
+  height: 450px;
+  background-image: url("../img/hand.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-bottom: 50px;
 }
 
 .skills-col {
   position: relative;
 }
 
-.skills-text{
+.skills-text-md{
   position: absolute;
   margin-top: 30%;
 }
@@ -230,11 +262,16 @@ body {
   margin-top: 10%;
 }
 
-.skills-text li {
+.skills-text-xs{
+  position: absolute;
+  margin-top: 10%;
+}
+
+.skills-text-md li {
   list-style: none;
 }
 
-.skills-text h3 {
+.skills-text-md h3 {
   margin-left: 40px;
 }
 
@@ -242,10 +279,23 @@ body {
   list-style: none;
 }
 
+.skills-text-xs li {
+  list-style: none;
+}
+
 .skills-text-sm h3 {
   margin-left: 40px;
 }
 
+.skills-text-xs p {
+  margin-left: -30px;
+}
+
+.skills-text-xs li {
+  margin-left: -30px;
+}
+
+/*PICTURE FEEDS*/
 .pics-feeds {
   height: 500px;
   margin-bottom: 50px;
@@ -320,7 +370,7 @@ body {
   width: 580px;
 }
 .entry-title{
-  color: #809999;
+  color: #87a94b;
   font-family: "Oswald", Helvetica;
   font-size: 25px;
   line-height: 38px;

@@ -7,20 +7,28 @@ var BlogList = React.createClass({
 
 		var self=this;
 
+
 		var oneBlog = this.props.data.map(function(blog){
+
 			var commentList = blog.comments.map(function(c){
+				if(c.user){
+		          var user = c.user.local.email;
+		        } else {
+		          var user = "anonymous"
+		        }
 				var originDate = c.date;
 				var commentDate = originDate.substring(0, 10);
 				return (
 					<div>
 						<div className='row'>
-							<h5 className='col-xs-8'>Name</h5>
+							<h5 className='col-xs-8'>Posted by: {user}</h5>
 							<p className='col-xs-4'><i>{commentDate}</i></p>
 						</div>
 							<p>{c.body}</p>
 					</div>
 					)
 			})
+
 			return (
 					<div>
 						<div className='entry-meta'>
