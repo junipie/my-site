@@ -20,14 +20,30 @@ body {
   height: 125px;
 }
 
-.head-name {
+.head-name-lg {
   font-family:'Raleway', sans-serif;
   font-size: 4em;
+}
+
+.head-name-md {
+  font-family:'Raleway', sans-serif;
+  font-size: 3.2em;
+}
+
+.head-name-xs {
+  font-family:'Raleway', sans-serif;
+  font-size: 2.5em;
+  text-align: center;
 }
 
 .head-subtitle {
   margin-top: -10px;
   margin-left: 40px;
+}
+
+.head-subtitle-xs {
+  text-align: center;
+  margin-top: -10px;
 }
 
 .ghost-button {
@@ -56,6 +72,13 @@ body {
   margin-top: 40px;
 }
 
+.nav-buttons-sm {
+  margin-top: 20px;
+}
+
+.nav-buttons-xs {
+  margin-top: -10px;
+}
 
 /*FOOTER*/
 .icons {
