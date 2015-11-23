@@ -4,6 +4,9 @@ var CommentForm = require('./commentForm');
 var BlogList = React.createClass({
 
 	render: function() {
+
+		var self=this;
+
 		var oneBlog = this.props.data.map(function(blog){
 			var commentList = blog.comments.map(function(c){
 				var originDate = c.date;
@@ -35,7 +38,7 @@ var BlogList = React.createClass({
 							<p><i>#tags, tags, tags</i></p>
 							<h4>Comments</h4>
 							{commentList}
-							<CommentForm blogId={blog._id}/>
+							<CommentForm blogId={blog._id} onPost={self.props.newData}/>
 						</div>
 					</div>
 					)

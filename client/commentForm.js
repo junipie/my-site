@@ -13,14 +13,17 @@ var commentSubmit = React.createClass({
 	        data: data,
 	        type:'POST',
 	        success: function(response){
+	        	if(this.props.onPost){
+	        		this.props.onPost()
+	        	}
 	          console.log("posting comment", response)
-	          document.location='/blog.html'
 	        }.bind(this),
 	        error: function(xhr, status, err){
 	          console.log("not posting data!")
 	          console.error(this.props.url, status, err.toString());
 	        }.bind(this)
 	    })
+	    React.findDOMNode(this.refs.body).value = ""
 	},
 	
    render: function() {

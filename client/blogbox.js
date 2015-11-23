@@ -27,9 +27,14 @@ var BlogBox = React.createClass({
 		this.loadBlogsFromServer();
 	},
 	render: function() {
+		var self = this;
+
+		var doRefresh = function(){
+			self.loadBlogsFromServer()
+		}
 		return (
 			<div id="blog-posts" className="clearfix blogs-area">
-				<BlogList data={this.state.data}/>
+				<BlogList data={this.state.data} newData={doRefresh}/>
 			</div>
 		);
 	}
