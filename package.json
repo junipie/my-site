@@ -26,6 +26,7 @@
     "express-session": "^1.11.3",
     "kerberos": "0.0.17",
     "lodash": "^3.10.1",
+    "md5": "^2.0.0",
     "merge-descriptors": "1.0.0",
     "method-override": "^2.3.5",
     "mongo": "^0.1.0",
@@ -36,8 +37,8 @@
     "passport": "^0.3.0",
     "passport-local": "^1.0.0",
     "react": "^0.14.2",
-    "webpack": "^1.9.6",
-    "twit": "^2.1.0"
+    "twit": "^2.1.0",
+    "webpack": "^1.9.6"
   },
   "engines": {
     "node": "5.0.0"
