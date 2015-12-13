@@ -8,10 +8,11 @@ module.exports = {
     blogPoster: './client/posting',
     github: './client/github'
   },
-  output: {
+    output: {
     path: path.join(__dirname, 'static'),
     filename: '[name].js',
-    publicPath: '/static/'
+    publicPath: '/static/',
+    plugins: [ new webpack.optimize.CommonsChunkPlugin("init.js") ]
   },
   plugins: [
     new webpack.optimize.OccurenceOrderPlugin(),
@@ -26,11 +27,18 @@ module.exports = {
       }
     })
   ],
-  module: {
-    loaders: [{
-      test: /\.js$/,
-      loaders: ['babel'],
-      include: path.join(__dirname, 'client')
-    }]
-  }
+module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                loader: 'babel',
+                exclude: /node_modules/,
+                include: path.join(__dirname, 'client'),
+                query: {
+                    cacheDirectory: true,
+                    presets: ['es2015', 'react']
+                }
+            }
+        ]
+    }
 };

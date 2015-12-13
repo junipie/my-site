@@ -1,32 +1,24 @@
 var React = require('react');
 
-var Github = React.createClass({
+var WakaData = React.createClass({
    render: function() {
-    var gitStuff = this.props.data.map(function(commit){
+    var wakaStuff = this.props.data.map(function(waka){
       return(
       <div>
-        <span id="react-twitter"/>
-      <h4><a href={commit.url}>{commit.repo}</a></h4>
-      <p>{commit.type}</p>
-      <p>{commit.timestamp}</p>
+      <p>{waka.name}</p>
+      <p>{waka.percent}</p>
     </div>
     );
     })
-       return (
-                <div>
-        <h2>Check me out on GitHub</h2>
-        {gitStuff}
-                </div>
-       );
    }
 });
 
-var GitBox = React.createClass({
+var WakaBox = React.createClass({
   getInitialState: function(){
     return{data: []};
   },
   //Fetch data from our server--------------
-  loadGitData: function(){
+  loadWakaData: function(){
     $.ajax({
       url:this.props.url,
       dataType:"json",
@@ -41,15 +33,16 @@ var GitBox = React.createClass({
   },
   //Mount components------------------
   componentDidMount: function(){
-    this.loadGitData();
+    this.loadWakaData();
   },
     render: function() {
        return (
-                <div>
-                   <Github data={this.state.data}/>
-                </div>
+            <div>
+              <h1>Waka Feed</h1>
+                <WakaData data={this.state.data}/>
+            </div>
        );
     }
 });
 
-module.exports = GitBox;
+module.exports = WakaBox;

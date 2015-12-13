@@ -11,22 +11,22 @@ router.use(function(req, res, next) {
 
 router.route('/blogs')
 
-	.post(function(req, res){
-		var title = req.body.title;
-		var date = req.body.date;
-    	var content = req.body.content;
-    	mongoose.model('Blog').create({
-      		title: title,
-      		date: date,
-      		content: content
-    	}, function(err, blog){
-      		if(err){
-        	res.send("Do you require assistance?");
-      		}else{
+  .post(function(req, res){
+    var title = req.body.title;
+    var date = req.body.date;
+      var content = req.body.content;
+      mongoose.model('Blog').create({
+          title: title,
+          date: date,
+          content: content
+      }, function(err, blog){
+          if(err){
+          res.send("Do you require assistance?");
+          }else{
             res.send(blog);
           }
-    	});
-  	})
+      });
+    })
 
 // GET All BLOGS
   .get(function(req, res) {
@@ -44,14 +44,14 @@ router.route('/blogs')
 router.route('/blogs/:blog_id')
 
     .get(function(req, res){
-    	mongoose.model("Blog").findById(req.params.blog_id, function(err, blog){
-    		if(err){
-    			res.send("Do you require assistance?");
-    		} else{
-    			console.log("Get by id is working");
-    			res.json(blog);
-    		}
-    	})
+      mongoose.model("Blog").findById(req.params.blog_id, function(err, blog){
+        if(err){
+          res.send("Do you require assistance?");
+        } else{
+          console.log("Get by id is working");
+          res.json(blog);
+        }
+      })
     })
 
     .put(function(req, res) {
@@ -59,14 +59,14 @@ router.route('/blogs/:blog_id')
             if (err)
                 res.send(err);
             blog.title = req.body.title;
-        	blog.date = req.body.date;
-        	blog.content = req.body.content;
+          blog.date = req.body.date;
+          blog.content = req.body.content;
             blog.save(function(err) {
                 if (err)
                     res.send(err);
                 res.json({ message: 'Blog updated!' });
             });
-    	});
+      });
     })
 
     .delete(function(req, res) {
