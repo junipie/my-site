@@ -8,7 +8,7 @@ module.exports = {
     ],
     blogPoster: ['webpack-hot-middleware/client', './client/posting'
     ],
-    github: ['webpack-hot-middleware/client', './client/github'
+    home: ['webpack-hot-middleware/client', './client/frontPageBox'
     ]
   },
     output: {
