@@ -69,7 +69,7 @@ app.use('/api', blogRoutes);
 app.use('/api/github', githubRoutes);
 app.use('/api/waka', fetchWakaEvents);
 
-var mongodbUri = process.env.MONGOLAB_URI || "mongodb://localhost/blogs";
+var mongodbUri = process.env.MONGOLAB_URI || 'mongodb://localhost/blogs';
 var mongooseUri = uriUtil.formatMongoose(mongodbUri);
 
 // view engine setup

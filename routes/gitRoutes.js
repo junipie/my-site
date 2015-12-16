@@ -12,8 +12,8 @@ fetchGithubEvents = function(req, res) {
             return {
               'message': c.message,
               'url': c.url
-            }
-          })
+            };
+          });
         }
         return {
           'id': g.id,
@@ -21,15 +21,14 @@ fetchGithubEvents = function(req, res) {
           'repo': g.repo.name,
           'coms': coms,
           'type': g.type
-        }
+        };
       });
 
-      
       res.json(myEvents.slice(Math.max(myEvents.length - 6, 1)));
     })
     .catch(function(response) {
       console.log(response);
     });
-}
+};
 
 module.exports = fetchGithubEvents;

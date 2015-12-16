@@ -1,68 +1,69 @@
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  } else {
+    res.redirect('/');
+  }
+}
+
 module.exports = function(app, passport) {
 
-// normal routes ===============================================================
-
-// show the home page (will also have our login links)
-app.get('/logindex', function(req, res) {
+  // show the home page (will also have our login links)
+  app.get('/logindex', function(req, res) {
     res.render('logindex.ejs');
-});
+  });
 
-// PROFILE SECTION =========================
-app.get('/profile', isLoggedIn, function(req, res) {
+  // PROFILE SECTION =========================
+  app.get('/profile', isLoggedIn, function(req, res) {
     res.render('profile.ejs', {
-        user : req.user
+      user: req.user
     });
-});
+  });
 
-app.get('/blog_poster', isLoggedIn, function(req, res) {
+  app.get('/blog_poster', isLoggedIn, function(req, res) {
     res.render('./views/blog_poster.ejs', {
-        user : req.user
+      user: req.user
     });
-});
-// LOGOUT ==============================
-app.get('/logout', function(req, res) {
+  });
+
+  // LOGOUT ==============================
+  app.get('/logout', function(req, res) {
     req.logout();
     res.redirect('/');
-});
+  });
 
-// AUTHENTICATE (FIRST LOGIN) ==================================================
+  // AUTHENTICATE (FIRST LOGIN) ==================================================
 
-// LOGIN ===============================
-app.get('/login', function(req, res) {
+  // LOGIN ===============================
+  app.get('/login', function(req, res) {
     res.render('login.ejs', { message: req.flash('loginMessage') });
-});
+  });
 
-app.post('/login', passport.authenticate('local-login', {
-    successRedirect : './views/blog_poster.ejs',
-    failureRedirect : '/login', // redirect to the signup page if error
-    failureFlash : true // allow flash messages
-}));
+  app.post('/login', passport.authenticate('local-login', {
+    successRedirect: './views/blog_poster.ejs',
+    failureRedirect: '/login',
+    failureFlash: true
+  }));
 
-// SIGNUP =================================
-app.get('/signup', function(req, res) {
+  // SIGNUP =================================
+  app.get('/signup', function(req, res) {
     res.render('signup.ejs', { message: req.flash('signupMessage') });
-});
-app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/signup', // redirect back to the signup page if there is an error
-    failureFlash : true // allow flash messages
-}));
+  });
+  app.post('/signup', passport.authenticate('local-signup', {
+    successRedirect: '/profile',
+    failureRedirect: '/signup',
+    failureFlash: true
+  }));
 
-// AUTHORIZE (ALREADY LOGGED IN)
-app.get('/connect/local', function(req, res) {
+  // AUTHORIZE (ALREADY LOGGED IN)
+  app.get('/connect/local', function(req, res) {
     res.render('connect-local.ejs', { message: req.flash('loginMessage') });
-});
-app.post('/connect/local', passport.authenticate('local-signup', {
-    successRedirect : '/profile', // redirect to the secure profile section
-    failureRedirect : '/connect/local', // redirect back to signup if there is an error
-    failureFlash : true // allow flash messages
-}));
-
+  });
+  app.post('/connect/local', passport.authenticate('local-signup', {
+    successRedirect: '/profile',
+    failureRedirect: '/connect/local',
+    failureFlash: true
+  }));
 };
 
 // route middleware to ensure user is logged in
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated())
-    return next();
-    res.redirect('/');
-}
