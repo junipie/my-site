@@ -27,9 +27,9 @@ var commentSubmit = React.createClass({
   render: function() {
     return (
       <div>
-        <h4>Post a Comment</h4>
+        <h4>Leave a Comment:</h4>
         <textarea className="form-control" rows="2" ref="body" placeholder="Leave a comment..."/>
-        <button onClick={this.handleSubmit} type="submit" className="btn btn-primary">Submit</button>
+        <button onClick={this.handleSubmit} className="btn ghost-button-xs">SUBMIT</button>
       </div>
     );
   }
